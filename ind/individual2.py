@@ -22,16 +22,9 @@ if __name__ == "__main__":
         inf = open(sys.argv[1], "r")
 
         # Читаем первую строку из файла
-        line = inf.readline()
-
-        NUM_LINES = 10
-        count = 0
-        while count < NUM_LINES and line != "":
-            line = line.rstrip()
-            count = count + 1
-            print(line)
-            line = inf.readline()
-        inf.close()
+        with open(sys.argv[1], "r") as fileptr:
+            content = fileptr.readlines()
+        print(content)
 
     except IOError:
         # Отображаем ошибку, если с чтением из файла возникли проблемы
