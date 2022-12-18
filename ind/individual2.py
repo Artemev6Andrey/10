@@ -18,12 +18,9 @@ if __name__ == "__main__":
         print("Передайте имя файла в качестве аргумента командной строки.")
         quit()
     try:
-        # Открываем файл на чтение
-        inf = open(sys.argv[1], "r")
-
         # Читаем первую строку из файла
         with open(sys.argv[1], "r") as fileptr:
-            content = fileptr.readlines()
+            content = fileptr.readlines(10)
         print(content)
 
     except IOError:
